@@ -1,0 +1,62 @@
+Microsoft (R) Macro Assembler Version 14.11.25547.0	    09/26/18 13:12:48
+Example1_.asm						     Page 1 - 1
+
+
+						.model flat,c
+ 00000000					.code
+
+				; extern "C" int CalcResult1_(int a, int b, int c);
+
+ 00000000			CalcResult1_ proc
+ 00000000  55					push ebp
+ 00000001  8B EC				mov ebp, esp
+
+ 00000003  8B 45 08				mov eax,[ebp+8]						;eax = a
+ 00000006  8B 4D 0C				mov ecx,[ebp+12]					;ecx = b
+ 00000009  8B 55 10				mov edx,[ebp+16]					;edx = c
+
+ 0000000C  03 C1				add eax,ecx							;eax = a + b
+ 0000000E  0F AF C2				imul eax,edx						;eax = (a + b) * c
+
+ 00000011  5D					pop ebp
+ 00000012  C3					ret
+ 00000013			CalcResult1_ endp
+						end
+Microsoft (R) Macro Assembler Version 14.11.25547.0	    09/26/18 13:12:48
+Example1_.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000000 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000013 Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+CalcResult1_ . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000013 Public C
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000001h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+
+	   0 Warnings
+	   0 Errors
