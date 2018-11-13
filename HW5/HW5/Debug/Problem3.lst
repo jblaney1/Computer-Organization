@@ -1,0 +1,73 @@
+Microsoft (R) Macro Assembler Version 14.14.26431.0	    10/18/18 21:54:44
+Problem3.asm						     Page 1 - 1
+
+
+						.model flat,c
+ 00000000					.code
+
+				;	extern "C" int problem3_(int a, int b, int c);
+
+ 00000000			problem3_ proc
+ 00000000  55						push ebp
+ 00000001  8B EC					mov ebp, esp
+
+ 00000003  8B 45 08					mov eax,[ebp+8]
+ 00000006  8B 4D 0C					mov ecx,[ebp+12]
+ 00000009  8B 55 10					mov edx,[ebp+16]
+
+ 0000000C  83 F8 00					cmp eax,0
+ 0000000F  73 02					jae checkB
+ 00000011  EB 07					jmp ifThen
+
+ 00000013  83 F9 02		checkB:		cmp ecx,2
+ 00000016  7E 02					jle ifThen
+ 00000018  EB 03					jmp probEnd
+
+ 0000001A  83 C1 05		ifThen:		add ecx,5
+
+ 0000001D  8B C1		probEnd:	mov eax,ecx
+ 0000001F  5D						pop ebp
+ 00000020  C3						ret
+ 00000021			problem3_ endp
+						end
+Microsoft (R) Macro Assembler Version 14.14.26431.0	    10/18/18 21:54:44
+Problem3.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000000 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000021 Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+problem3_  . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000021 Public C
+  checkB . . . . . . . . . . . .	L Near	 00000013 _TEXT	
+  ifThen . . . . . . . . . . . .	L Near	 0000001A _TEXT	
+  probEnd  . . . . . . . . . . .	L Near	 0000001D _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000001h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+
+	   0 Warnings
+	   0 Errors

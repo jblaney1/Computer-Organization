@@ -1,0 +1,3 @@
+﻿  hws7.cpp
+c:\users\batman\source\repos\hws7\hws7\hws7.cpp(43): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  hws7.vcxproj -> C:\Users\Batman\source\repos\hws7\Debug\hws7.exe
